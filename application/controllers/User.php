@@ -15,5 +15,6 @@ class User extends CI_Controller{
           	$this->load->view('User/user_information');
             $this->load->view('Include/footer');
       }
+      
 }
 ?>

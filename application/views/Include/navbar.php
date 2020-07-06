@@ -73,23 +73,45 @@
               </a>
             </li>
             <li class="nav-item">
-              <a <?php if(isset($update_slider)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>User/slider_information" <?php } ?> class="nav-link">
+              <a <?php if(isset($update_slider)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>Master/slider_information" <?php } ?> class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Slider Information</p>
               </a>
             </li>
             <li class="nav-item">
-              <a <?php if(isset($update_user)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>User/user_information" <?php } ?> class="nav-link">
+              <a <?php if(isset($update_event)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>Master/event_information" <?php } ?> class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>User Information</p>
+                <p>Events Information</p>
               </a>
             </li>
             <li class="nav-item">
-              <a <?php if(isset($update_user)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>User/user_information" <?php } ?> class="nav-link">
+              <a <?php if(isset($update_carrer)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>Master/carrer_information" <?php } ?> class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>User Information</p>
+                <p>Carrer Guidance</p>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a <?php if(isset($update_office)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>Master/office_information" <?php } ?> class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Office Information</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a <?php if(isset($update_press)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>Master/press_information" <?php } ?> class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Press Release</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a <?php if(isset($update_gallery)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>Master/gallery_information" <?php } ?> class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Add Gallery </p>
+              </a>
+            </li>
+
           </ul>
         </li>
 
