@@ -1,8 +1,7 @@
-<!-- <?php
+<?php
 $bvm_user_id = $this->session->userdata('bvm_user_id');
-$bvm_company_id = $this->session->userdata('bvm_company_id');
 $bvm_role_id = $this->session->userdata('bvm_role_id');
-?> -->
+?>
 <footer class="main-footer">
   <strong>Copyright &copy;.</strong>
   All rights reserved.

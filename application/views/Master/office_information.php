@@ -34,24 +34,24 @@
                   <div class="row p-4">
                   <div class="form-group col-md-12">
                     <label>Office Name</label>
-                    <input type="text" class="form-control form-control-sm required" name="slider_title" id="slider_title" value="" placeholder="Office Name" required="">
+                    <input type="text" class="form-control form-control-sm required" name="office_name" id="office_name" value="<?php if(isset($office_info)){ echo $office_info['office_name']; } ?>" placeholder="Office Name" required="">
                   </div>
 
                   <div class="form-group col-md-12">
                     <label>Enter Address</label>
-                    <textarea class="form-control" rows="6" placeholder="Enter Address"></textarea>
+                    <textarea class="form-control" name="office_address" rows="6" placeholder="Enter Address"><?php if(isset($office_info)){ echo $office_info['office_address']; } ?></textarea>
                   </div>
                 </div>
                   <div class="card-footer clearfix" style="display: block;">
                     <div class="row">
                       <div class="col-md-6 text-left">
                         <div class="custom-control custom-checkbox">
-                          <input class="custom-control-input" type="checkbox" name="slider_status" id="slider_status" value="0" <?php if(isset($event_info) && $event_info['slider_status'] == 0){ echo 'checked'; } ?>>
-                          <label for="slider_status" class="custom-control-label">Disable This Office</label>
+                          <input class="custom-control-input" type="checkbox" name="office_status" id="office_status" value="0" <?php if(isset($office_info) && $office_info['office_status'] == 0){ echo 'checked'; } ?>>
+                          <label for="office_status" class="custom-control-label">Disable This Office</label>
                         </div>
                       </div>
                       <div class="col-md-6 text-right">
-                        <a href="<?php echo base_url(); ?>Master/slider_information" class="btn btn-sm btn-default px-4 mx-4">Cancel</a>
+                        <a href="<?php echo base_url(); ?>Master/office_information" class="btn btn-sm btn-default px-4 mx-4">Cancel</a>
                         <?php if(isset($update)){
                           echo '<button class="btn btn-sm btn-primary float-right px-4">Update</button>';
                         } else{
@@ -79,30 +79,27 @@
                     <th class="wt_50">Action</th>
                     <th>Office Name</th>
                     <th>Office address</th>
-                    <th></th>
-                    <th class="wt_100">Mobile No.</th>
                     <th class="wt_75">Status</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <!-- <?php $i=0; foreach ($event_list as $list) { $i++; ?>
+                    <?php $i=0; foreach ($office_list as $list) { $i++; ?>
                       <tr>
                         <td class="d-none"><?php echo $i; ?></td>
                         <td>
                           <div class="btn-group">
-                            <a href="<?php echo base_url() ?>Master/edit_event/<?php echo $list->event_id; ?>" type="button" class="btn btn-sm btn-default"><i class="fa fa-edit text-primary"></i></a>
-                            <a href="<?php echo base_url() ?>Master/delete_event/<?php echo $list->event_id; ?>" type="button" class="btn btn-sm btn-default" onclick="return confirm('Delete this Event');"><i class="fa fa-trash text-danger"></i></a>
+                            <a href="<?php echo base_url() ?>Master/edit_office/<?php echo $list->office_id; ?>" type="button" class="btn btn-sm btn-default"><i class="fa fa-edit text-primary"></i></a>
+                            <a href="<?php echo base_url() ?>Master/delete_office/<?php echo $list->office_id; ?>" type="button" class="btn btn-sm btn-default" onclick="return confirm('Delete this Event');"><i class="fa fa-trash text-danger"></i></a>
                           </div>
                         </td>
-                        <td><?php echo $list->event_name; ?></td>
-                        <td><?php echo $list->event_city; ?></td>
-                        <td><?php echo $list->event_mobile; ?></td>
+                        <td><?php echo $list->office_name; ?></td>
+                        <td><?php echo $list->office_address; ?></td>
                         <td>
-                          <?php if($list->event_status == 0){ echo '<span class="text-danger">Inactive</span>'; }
+                          <?php if($list->office_status == 0){ echo '<span class="text-danger">Inactive</span>'; }
                             else{ echo '<span class="text-success">Active</span>'; } ?>
                         </td>
                       </tr>
-                    <?php } ?> -->
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>

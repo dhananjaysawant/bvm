@@ -1,9 +1,9 @@
-<!-- <?php
+<?php
   $bvm_user_id = $this->session->userdata('bvm_user_id');
-  $bvm_company_id = $this->session->userdata('bvm_company_id');
   $bvm_role_id = $this->session->userdata('bvm_role_id');
+  $user_info = $this->Master_Model->get_info_arr_fields('user_name','user_id', $bvm_user_id, 'user');
+?>
 
-?> -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
   <!-- Left navbar links -->
   <ul class="navbar-nav">
@@ -40,7 +40,7 @@
         <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
       </div>
       <div class="info">
-        <a href="#" class="d-block">Admin</a>
+        <a href="#" class="d-block"><?php echo $user_info[0]['user_name']; ?></a>
       </div>
     </div>
     <!-- Sidebar Menu -->

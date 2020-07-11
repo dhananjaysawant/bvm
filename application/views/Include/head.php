@@ -1,12 +1,11 @@
-<!-- <?php
+<?php
   $bvm_user_id = $this->session->userdata('bvm_user_id');
-  $bvm_company_id = $this->session->userdata('bvm_company_id');
   $bvm_role_id = $this->session->userdata('bvm_role_id');
-?> -->
+?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>भारतीय विद्यार्थी मोर्चा | Admin Panel</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->

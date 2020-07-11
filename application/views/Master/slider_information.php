@@ -30,18 +30,27 @@
               </div>
               <!--  -->
               <div class="card-body p-0" <?php if(isset($update)){ echo 'style="display: block;"'; } else{ echo 'style="display: none;"'; } ?>>
-                <form class="input_form m-0" id="form_action" role="form" action="" method="post">
+                <form class="input_form m-0" id="form_action" role="form" action="" method="post" enctype="multipart/form-data" >
                   <div class="row p-4">
                     <div class="form-group col-md-12">
                     <label>Slider Title</label>
-                    <input type="text" class="form-control form-control-sm required" name="slider_title" id="slider_title" value="" placeholder="Slider Title" required="">
+                    <input type="text" class="form-control form-control-sm required" name="slider_title" id="slider_title" value="<?php if(isset($slider_info)){ echo $slider_info['slider_title']; } ?>" placeholder="Slider Title" required>
                   </div>
 
                   <div class="form-group col-md-12">
                     <label>Select Image</label>
                     <label>Image Size Must Be 1920px * 300px</label>
-                    <input type="file" name="slider_img" id="slider_img" class="form-control form-control-sm">
+                    <input type="file" name="slider_image" id="slider_image" class="form-control form-control-sm" required>
                   </div>
+                  <?php if(isset($update)){ $slider_image=$slider_info['slider_image']; } ?>
+
+                  <?php if(isset($slider_image)){ ?>
+                  <div class="form-group col-md-6">
+                    <img style="height:150px; width:150px;" src="<?php echo base_url(); ?>assets/images/slider/<?php echo $slider_image; ?>" alt="">
+                  </div>
+                  <input type="hidden" name="old_img" value="<?php echo $slider_image; ?>">
+                  <?php } ?>
+
                 </div>
                   <div class="card-footer clearfix" style="display: block;">
                     <div class="row">
@@ -79,30 +88,28 @@
                     <th class="d-none">#</th>
                     <th class="wt_50">Action</th>
                     <th>Slider Name</th>
-                    <th>Wing</th>
-                    <th class="wt_100">Mobile No.</th>
+                    <th>slider Image</th>
                     <th class="wt_75">Status</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <!-- <?php $i=0; foreach ($slider_list as $list) { $i++; ?>
+                    <?php $i=0; foreach ($slider_list as $list) { $i++; ?>
                       <tr>
                         <td class="d-none"><?php echo $i; ?></td>
                         <td>
                           <div class="btn-group">
                             <a href="<?php echo base_url() ?>Master/edit_slider/<?php echo $list->slider_id; ?>" type="button" class="btn btn-sm btn-default"><i class="fa fa-edit text-primary"></i></a>
-                            <a href="<?php echo base_url() ?>Master/delete_slider/<?php echo $list->slider_id; ?>" type="button" class="btn btn-sm btn-default" onclick="return confirm('Delete this Slider');"><i class="fa fa-trash text-danger"></i></a>
+                            <a href="<?php echo base_url() ?>Master/delete_slider/<?php echo $list->slider_id; ?>" type="button" class="btn btn-sm btn-default" onclick="return confirm('Delete this User');"><i class="fa fa-trash text-danger"></i></a>
                           </div>
                         </td>
-                        <td><?php echo $list->slider_name; ?></td>
-                        <td><?php echo $list->slider_city; ?></td>
-                        <td><?php echo $list->slider_mobile; ?></td>
+                        <td><?php echo $list->slider_title; ?></td>
+                        <td> <img src="<?php echo base_url(); ?>assets/images/slider/<?php echo $list->slider_image; ?>" alt="" width="120" height="60"> </td>
                         <td>
                           <?php if($list->slider_status == 0){ echo '<span class="text-danger">Inactive</span>'; }
                             else{ echo '<span class="text-success">Active</span>'; } ?>
                         </td>
                       </tr>
-                    <?php } ?> -->
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>

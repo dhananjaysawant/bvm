@@ -30,21 +30,16 @@
               </div>
               <!--  -->
               <div class="card-body p-0" <?php if(isset($update)){ echo 'style="display: block;"'; } else{ echo 'style="display: none;"'; } ?>>
-                <form class="input_form m-0" id="form_action" role="form" action="" method="post">
+                <form class="input_form m-0" id="form_action" role="form" action="" method="post" autocomplete="off">
                   <div class="row p-4">
                     <div class="form-group col-md-6 select_sm">
                       <label>Name of User</label>
-                      <input type="text" class="form-control form-control-sm" name="user_name" id="user_name" value="<?php if(isset($user_info)){ echo $user_info['user_name']; } ?>"  placeholder="Enter Name of User" required >
+                      <input type="text" class="form-control form-control-sm" name="user_name" id="user_name" value="<?php if(isset($user_info)){ echo $user_info['user_name']; } ?>"  placeholder="Enter Name of User" required autocomplete="off" >
                     </div>
                     <div class="form-group col-md-6 select_sm">
-                        <label>Select Wing</label>
-                        <select class="form-control select2" name="medium_id" id="medium_id" data-placeholder="Select Wing">
-                          <option value="">Select Wing</option>
-                          <!-- <?php foreach ($medium_list as $medium_list1) { ?>
-                            <option value="<?php echo $medium_list1->medium_id; ?>" <?php if(isset($class_info) && $class_info['medium_id'] == $medium_list1->medium_id){ echo 'selected'; } ?>><?php echo $medium_list1->medium_name; ?></option>
-                          <?php } ?> -->
-                        </select>
-                      </div>
+                      <label>Name of Wing</label>
+                      <input type="text" class="form-control form-control-sm" name="user_wing" id="user_wing" value="<?php if(isset($user_info)){ echo $user_info['user_wing']; } ?>"  placeholder="Enter Name of User" required autocomplete="off" >
+                    </div>
                     <div class="form-group col-md-6 select_sm">
                       <label>Mobile No.</label>
                       <input type="number" min="5000000000" max="9999999999" class="form-control form-control-sm" name="user_mobile" id="user_mobile" value="<?php if(isset($user_info)){ echo $user_info['user_mobile']; } ?>"  placeholder="Enter Mobile No." required >
@@ -90,13 +85,13 @@
                     <th class="d-none">#</th>
                     <th class="wt_50">Action</th>
                     <th>User Name</th>
-                    <th>Wing</th>
+                    <th>User Wing</th>
                     <th class="wt_100">Mobile No.</th>
                     <th class="wt_75">Status</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <!-- <?php $i=0; foreach ($user_list as $list) { $i++; ?>
+                    <?php $i=0; foreach ($user_list as $list) { $i++; ?>
                       <tr>
                         <td class="d-none"><?php echo $i; ?></td>
                         <td>
@@ -106,14 +101,14 @@
                           </div>
                         </td>
                         <td><?php echo $list->user_name; ?></td>
-                        <td><?php echo $list->user_city; ?></td>
+                        <td><?php echo $list->user_wing; ?></td>
                         <td><?php echo $list->user_mobile; ?></td>
                         <td>
                           <?php if($list->user_status == 0){ echo '<span class="text-danger">Inactive</span>'; }
                             else{ echo '<span class="text-success">Active</span>'; } ?>
                         </td>
                       </tr>
-                    <?php } ?> -->
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
